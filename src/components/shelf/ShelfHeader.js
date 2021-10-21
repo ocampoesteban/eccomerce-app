@@ -6,7 +6,6 @@ import Clearfix from '../Clearfix';
 
 
 const ShelfHeader = (props) => {
-
   return (
     <div className="shelf-container-header">
       <small className="products-found">

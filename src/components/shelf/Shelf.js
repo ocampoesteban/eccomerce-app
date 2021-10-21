@@ -9,6 +9,7 @@ import Product from './Product';
 import Filter from './Filter';
 import ShelfHeader from './ShelfHeader';
 import Clearfix from '../Clearfix';
+import Breadcrumb from '../breadcrumb/Breadcrumb';
 
 
 class Shelf extends Component {
@@ -37,13 +38,17 @@ class Shelf extends Component {
     this.props.fetchProducts(this.props.filters, sort);
   }
 
+  get route() {
+    return ['Male','T-shirt'];
+  }
+
   render() {
-    const { products } = this.props;
+    const { products, addProduct } = this.props;
     const p = products.map(p => {
       return (
         <Product
           product={p}
-          addProduct={this.props.addProduct}
+          addProduct={addProduct}
           key={p.id}
         />
       );
@@ -53,16 +58,14 @@ class Shelf extends Component {
       <React.Fragment>
         <Filter />  
         <div className="shelf-container">
+          <Breadcrumb paths={this.route}/>
           <ShelfHeader productsLength={products.length}/>
           {p}
           <Clearfix />
         </div>
-        <Clearfix />
       </React.Fragment>
     )
-
   }
-  
 }
 
 Shelf.propTypes = {
