@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
 const isLastPathElement = (list, sizeToCompare) => 
   list.length-1 === sizeToCompare;
 
 const buildPath = (paths) => paths.map((current,index)=>{return <p> {current}  { isLastPathElement(paths, index)? '': '/'} </p>})
 
-const Breadcrumb = (props) => (
+const BreadcrumbComponent = (props) => (
   <div className="breadcrumb__container">
     {
       buildPath(props.paths)
@@ -15,7 +14,7 @@ const Breadcrumb = (props) => (
   </div>
 );
 
-Breadcrumb.propTypes = {
+BreadcrumbComponent.propTypes = {
   paths: PropTypes.array.isRequired,
 }
-export default Breadcrumb;
+export default BreadcrumbComponent;

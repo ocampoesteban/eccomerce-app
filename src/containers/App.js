@@ -13,7 +13,7 @@ import FloatCart from './../components/floatCart/FloatCart';
 
 import store from '../store';
 import Corner from '../components/github/Corner';
-
+import Menu from '../components/menu/Menu';
 
 
 class App extends Component {
@@ -23,6 +23,7 @@ class App extends Component {
         <div className="App">
           <Corner />
           <Banner src={bannerImage} alt='Promoção Camisas do Timão' />
+          <Menu />
           <main>
             <Shelf />
           </main>

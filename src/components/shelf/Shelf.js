@@ -8,8 +8,7 @@ import { addProduct } from '../../store/actions/floatCartActions';
 import Product from './Product';
 import Filter from './Filter';
 import ShelfHeader from './ShelfHeader';
-import Clearfix from '../Clearfix';
-import Breadcrumb from '../breadcrumb/Breadcrumb';
+import BreadcrumbComponent from '../breadcrumb/BreadcrumbComponent';
 
 
 class Shelf extends Component {
@@ -58,10 +57,9 @@ class Shelf extends Component {
       <React.Fragment>
         <Filter />  
         <div className="shelf-container">
-          <Breadcrumb paths={this.route}/>
+          <BreadcrumbComponent paths={this.route}/>
           <ShelfHeader productsLength={products.length}/>
           {p}
-          <Clearfix />
         </div>
       </React.Fragment>
     )
